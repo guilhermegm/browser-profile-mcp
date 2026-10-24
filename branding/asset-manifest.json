@@ -90,6 +90,27 @@
       "status": "ready-artwork"
     },
     {
+      "file": "cws/screenshots/01-setup-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "mode": "RGB",
+      "status": "actual-product-capture"
+    },
+    {
+      "file": "cws/screenshots/02-start-agent-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "mode": "RGB",
+      "status": "actual-product-capture"
+    },
+    {
+      "file": "cws/screenshots/03-connection-controls-1280x800.png",
+      "width": 1280,
+      "height": 800,
+      "mode": "RGB",
+      "status": "actual-product-capture"
+    },
+    {
       "file": "cws/store-icon-128.png",
       "width": 128,
       "height": 128,

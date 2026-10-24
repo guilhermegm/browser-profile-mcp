@@ -1,0 +1,26 @@
+{
+  "extensionVersion": "0.5.3",
+  "browser": "156.0.8078.4",
+  "dimensions": [
+    1280,
+    800
+  ],
+  "method": "Real installed extension in a disposable headless Chromium profile; original panel pixels composed with explanatory captions.",
+  "controller": "Local stdio MCP SDK client; no AI provider or real user account.",
+  "data": "Disposable profile named work and a loopback sample page; no saved user pairings, clipboard, or personal Chrome data.",
+  "limitations": "These captures do not verify Codex/Claude registration, real account sessions, cursor actions, or the complete browser test suite.",
+  "images": [
+    {
+      "file": "01-setup-1280x800.png",
+      "state": "Unpaired; profile name entered by the capture script."
+    },
+    {
+      "file": "02-start-agent-1280x800.png",
+      "state": "Real disposable pairing saved; no agent attached yet."
+    },
+    {
+      "file": "03-connection-controls-1280x800.png",
+      "state": "Real local SDK client attached and tabs listed; connection settings expanded."
+    }
+  ]
+}

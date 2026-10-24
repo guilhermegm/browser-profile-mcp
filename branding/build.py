@@ -314,6 +314,7 @@ def inventory():
             with Image.open(path) as image:
                 item.update(width=image.width, height=image.height, mode=image.mode)
         item['status'] = ('capture-template-only' if 'capture-templates' in path.parts else
+                          'actual-product-capture' if 'screenshots' in path.relative_to(ROOT).parts else
                           'logo-concept' if 'generated-v2' in path.name else 'ready-artwork')
         rows.append(item)
     (ROOT / 'asset-manifest.json').write_text(json.dumps({'name': 'Browser Profile MCP', 'assets': rows}, indent=2)+'\n')

@@ -1,0 +1,60 @@
+BROWSER PROFILE MCP — CHROME WEB STORE LISTING
+
+NAME
+Browser Profile MCP
+
+SHORT DESCRIPTION (matches manifest.json)
+Let your local coding agent control this Chrome profile's existing tabs.
+
+LANGUAGE
+English
+
+SUGGESTED CATEGORY
+Developer Tools
+
+DETAILED DESCRIPTION — COPY FROM HERE
+
+Connect Codex, Claude Code, or another local MCP coding agent to the Chrome profile and tabs you already use.
+
+Browser Profile MCP lets your coding agent read pages and interact with your existing browser. Keep your website logins in Chrome and your AI account in your coding agent. You do not need to sign in to OpenAI or Claude inside the paired Chrome profile.
+
+WHAT YOU CAN DO
+• List, open, focus, and close tabs in the paired profile.
+• Read page text and inspect accessible controls.
+• Click, type, scroll, select options, and capture the visible page.
+• Use compact reads, combined actions and reads, and small action batches.
+• Follow agent clicks and typing with a visible on-page cursor.
+
+USE YOUR EXISTING PROFILES
+Pair each Chrome profile separately, with a name such as work or personal. Multiple coding-agent sessions can use the same pairing. Sessions share the real page state, so changes made by one session are visible to the others. The extension works with your current Chrome windows; the bridge does not launch a separate browser.
+
+SET UP ONCE
+1. Name your Chrome profile in the extension.
+2. Copy the setup prompt into your local coding agent.
+3. Paste the pairing code your agent returns and click Connect.
+4. Start a new agent session and send the message shown in the panel.
+
+Your agent installs and registers the local bridge. It starts the bridge automatically when you use the MCP connection. Pairing is saved across Chrome and computer restarts. Closing the side panel does not disconnect the browser.
+
+YOU STAY IN CONTROL
+Use Connection settings to disconnect, stop current actions, or redo setup. System clipboard shortcuts are off by default and have a separate setting. Chrome displays its debugging notice while the extension is attached to a page for control; idle tabs detach automatically.
+
+REQUIREMENTS
+Chrome 118 or newer, Node.js 20 or newer with npm, and a coding-agent client that supports local stdio MCP servers, running on the same computer. A separate open-source Node.js bridge is required. The setup prompt directs your agent to the matching GitHub release, verifies its checksum, and installs it locally. Your coding agent may require its own account, subscription, or API access. Remote-only agents cannot directly connect to this local bridge.
+
+PRIVACY
+The extension sends requested tab information, page content, accessibility information, and screenshots through the local bridge to your chosen agent. Your agent may send that information to its AI provider. The extension has no analytics or developer-operated browser-control server. Actions run in your real logged-in websites and can change their data. Use it with profiles and agents you trust.
+
+Open source under the MIT license. Browser Profile MCP is an independent project and is not affiliated with Google, OpenAI, or Anthropic.
+
+Source and setup: https://github.com/guilhermegm/browser-profile-mcp
+Support: https://github.com/guilhermegm/browser-profile-mcp/issues
+Privacy: https://github.com/guilhermegm/browser-profile-mcp/blob/main/PRIVACY.md
+
+END OF DETAILED DESCRIPTION
+
+ADDITIONAL URL FIELDS
+Homepage: https://github.com/guilhermegm/browser-profile-mcp
+Support: https://github.com/guilhermegm/browser-profile-mcp/issues
+Privacy policy: https://github.com/guilhermegm/browser-profile-mcp/blob/main/PRIVACY.md
+Do not enter an invented publisher email, verified domain, or Chrome Web Store URL.

@@ -383,7 +383,7 @@ Upload only the contents of `extension/` to CWS, with `manifest.json` at the ZIP
 
 ## Branding and publication assets
 
-Brand artwork, extension icons, Chrome Web Store promotions, website assets, and reusable prompts are in [`branding/`](branding/index.html). The current logo uses the supplied full-color proboscis monkey artwork with its transparent background. The untouched source is `branding/logo/monkey-source.png`; PNG exports preserve the artwork and transparency, and SVG layouts embed the raster image. The 128 px store icon includes transparent outer padding. Open `branding/index.html` for the visual guide, `branding/prompts.txt` for the prompt pack, and `branding/publishing.txt` for store requirements. Real product screenshots still need to be captured before publishing; the marked capture layouts are drafts.
+Brand artwork, extension icons, Chrome Web Store promotions, website assets, and reusable prompts are in [`branding/`](branding/index.html). The current logo uses the supplied full-color proboscis monkey artwork with its transparent background. The untouched source is `branding/logo/monkey-source.png`; PNG exports preserve the artwork and transparency, and SVG layouts embed the raster image. The 128 px store icon includes transparent outer padding. Open `branding/index.html` for the visual guide and `branding/prompts.txt` for the prompt pack. [Chrome Web Store submission files](CHROME_WEB_STORE.md) include listing copy, privacy declarations, reviewer instructions, and three 1280 × 800 captures of the actual installed panel with a disposable pairing. `npm run build:cws` packages the handoff; nothing is submitted automatically. The older marked capture layouts remain drafts.
 
 ## License, privacy, and security
 

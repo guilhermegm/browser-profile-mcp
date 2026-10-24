@@ -24,7 +24,9 @@
     "test:all": "npm test && npm run test:browser",
     "build:helper": "node scripts/package-helper.mjs",
     "build:release": "npm run build:helper && python3 scripts/package-release.py",
-    "capture:setup": "node scripts/capture-setup.mjs"
+    "build:cws": "npm run build:release && python3 scripts/package-cws.py",
+    "capture:setup": "node scripts/capture-setup.mjs",
+    "capture:cws": "node scripts/capture-cws.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/client": "^2.3.1",

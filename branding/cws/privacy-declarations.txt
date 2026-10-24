@@ -1,0 +1,111 @@
+BROWSER PROFILE MCP — PRIVACY PRACTICES DASHBOARD
+Prepared against the v0.5.3 manifest and source, 2026-10-24.
+Paste each section into its corresponding field. These describe the extension,
+not the independent practices of a user's chosen coding-agent provider.
+
+SINGLE PURPOSE
+Connect a user-paired existing Chrome profile to the user's local MCP coding
+agent so that agent can inspect pages and perform browser actions in that profile.
+
+PERMISSION: debugger
+Required to inspect and control the tabs selected by the connected local agent
+using Chrome DevTools Protocol: read visible text and accessibility controls,
+capture the viewport, and dispatch clicks, typing, and scrolling. The extension
+attaches on demand, shows Chrome's debugging notice, and detaches idle tabs.
+It exposes a fixed set of browser tools, not an arbitrary CDP or JavaScript API.
+
+PERMISSION: tabs
+Required to return tab titles, URLs, and IDs in the paired profile and to let
+the agent create, focus, close, and navigate tabs. This identifies the existing
+tab requested by the user without launching another browser. Incognito tabs
+are excluded. There is no Chrome history database access.
+
+PERMISSION: storage
+Required to save the local pairing credentials, per-installation identity,
+connection preference, clipboard-shortcut preference, and last connection
+interruption. These remain in chrome.storage.local; Chrome Sync is not used.
+The setup profile name is also remembered locally by the panel.
+
+PERMISSION: alarms
+Required for a periodic reconnect check in the Manifest V3 background worker.
+This restores the saved local connection when the agent's bridge becomes
+available, even when the side panel is closed. It is not used for tracking.
+
+PERMISSION: sidePanel
+Required to provide the profile's setup, connection status, and controls in
+Chrome's side panel. The toolbar action opens this panel instead of a popup.
+
+HOST PERMISSION: http://127.0.0.1/*
+Required solely to communicate with the user-installed Node.js bridge on IPv4
+loopback on this computer. Pairing chooses the local port, so one fixed port
+cannot be declared. The extension uses ws://127.0.0.1:<paired-port>/extension;
+the application protocol authenticates peers and encrypts command payloads.
+It does not use this host permission to contact a developer-operated server.
+
+REMOTE CODE
+Select: No, I am not using remote code.
+
+Explanation if requested:
+All extension JavaScript, injected helper functions, fonts, and images are
+included in the extension package. The bridge sends structured tool names
+and validated JSON arguments, such as a tab ID, selector, or text to type.
+There is no tool for accepting arbitrary JavaScript or CDP commands. Page
+inspection uses packaged functions through chrome.debugger in isolated
+worlds. Website JavaScript belongs to the visited website, not extension
+updates. The separate Node.js bridge and its npm dependencies are installed
+and executed by the user's coding agent outside the Chrome extension. That
+download does not replace, add, or execute code in the extension package.
+
+DATA TYPES — SELECT THE FOLLOWING
+Do not select "no user data" just because the bridge is local. The extension
+can return sensitive content from any page the user asks the agent to inspect.
+It does not automatically redact these categories from screenshots or text.
+Use these broad declarations for the current general-purpose browser tools:
+
+• Personally identifiable information: names, addresses, email addresses,
+  identifiers, and other details visible in requested pages or typed inputs.
+• Health information: may be included when a requested page or input contains it.
+• Financial and payment information: may be included in requested page content
+  or inputs, including transactions, balances, or payment details.
+• Authentication information: local pairing secrets and any authentication
+  values a user instructs the agent to type or inspect. The tools do not export
+  Chrome's cookie store, but sensitive values in page content are not redacted.
+• Personal communications: email, chat, and messages on pages the agent reads
+  or acts on at the user's request.
+• Location: addresses or location details on requested pages or in inputs;
+  the extension does not request the geolocation API permission.
+• Web history: titles and URLs of open tabs and pages navigated by the agent;
+  it does not query Chrome's stored browsing-history database.
+• User activity: the agent's browser interactions, including clicks, scrolling,
+  and supplied keystrokes/text. It is not a passive recorder of user activity.
+• Website content: requested page text, accessibility information, screenshots,
+  form values, and content entered by the agent.
+
+WHY DATA IS HANDLED
+Only to provide the browser tools requested through the paired local agent,
+authenticate that local connection, and maintain its connection settings.
+The bridge forwards tool results to the user's agent. The agent may transmit
+them to its AI provider. No analytics, advertising, sale of data, or developer
+remote collection is included. Normal requests to websites and installation
+downloads to GitHub/npm have their own service policies.
+
+DATA USE CERTIFICATIONS
+The current project's own use supports the dashboard statements that data is
+not sold or transferred outside permitted uses, is not used or transferred
+for purposes unrelated to the single purpose, and is not used or transferred
+to determine creditworthiness or for lending. The publisher must read and
+personally attest to the exact current dashboard wording before submitting.
+Do not certify the independent data practices of every possible AI client.
+
+PRIVACY POLICY URL
+https://github.com/guilhermegm/browser-profile-mcp/blob/main/PRIVACY.md
+
+REVIEW NOTE
+Pairing is local. No developer account or developer-hosted login is required.
+See reviewer-instructions.txt for both the normal coding-agent flow and a
+provider-independent way to review the tools without an AI subscription.
+
+OFFICIAL REFERENCES
+https://developer.chrome.com/docs/webstore/cws-dashboard-privacy
+https://developer.chrome.com/docs/webstore/program-policies/user-data-faq
+https://developer.chrome.com/docs/extensions/develop/migrate/remote-hosted-code

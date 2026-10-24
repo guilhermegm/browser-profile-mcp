@@ -1,5 +1,12 @@
 BROWSER PROFILE MCP — PUBLICATION ASSET CHECKLIST
-Checked against Google's documentation on 2026-10-23.
+Checked against Google's documentation on 2026-10-24.
+
+Complete dashboard handoff: CHROME_WEB_STORE.md in the repository root:
+https://github.com/guilhermegm/browser-profile-mcp/blob/main/CHROME_WEB_STORE.md
+Listing copy: cws/listing.txt.
+Privacy declarations and permission reasons: cws/privacy-declarations.txt.
+Reviewer setup, including a route without an AI account: cws/reviewer-instructions.txt.
+Public policy: https://github.com/guilhermegm/browser-profile-mcp/blob/main/PRIVACY.md
 
 CHROME WEB STORE
 
@@ -10,11 +17,15 @@ Required: 128 x 128 PNG icon.
 Required: at least one actual extension screenshot; maximum five.
   Use 1280 x 800 (recommended here); Google's image guide also permits 640 x 400.
   Use square canvas corners and full bleed. Show the actual current experience.
-  Pending: real product captures. cws/capture-templates/ contains marked draft
-  layouts and capture briefs only. Do not upload those drafts as screenshots.
+  Ready: three 1280 x 800 captures in cws/screenshots/: setup, start agent,
+  and connected controls. Actual installed extension panels, with explanatory
+  captions, a disposable pairing, and a real local SDK tab-listing call.
+  See screenshots/capture-info.json for provenance and validation limits.
+  cws/capture-templates/ contains marked draft layouts for future captures;
+  do not upload those drafts as screenshots.
   Preserve the extension UI and redact personal data, pairing codes, tokens,
-  email addresses, and private page content. No browser session was accessed to
-  create this kit.
+  email addresses, and private page content. No existing user browser profile
+  or saved pairing was accessed to create the kit.
 
 Optional: small promotional tile, 440 x 280 PNG or JPEG.
   Ready: cws/promo-small-440x280.png, with editable SVG alongside it.

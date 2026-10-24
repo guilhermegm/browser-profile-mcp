@@ -59,8 +59,9 @@ Production: website/repository-social-1280x640.svg and .png.
 Capture the real extension on harmless pages. Redact personal data and pairing
 codes. Use Paper margins, the small current signature, and one Ink headline.
 Show real profiles, agent actions, visible cursor, and connection controls.
-The files in cws/capture-templates/ are draft layouts, not product captures.
-Replace their marked placeholders with real captures before uploading.
+Three actual panel captures are ready in cws/screenshots/ (see capture-info.json).
+The files in cws/capture-templates/ remain draft layouts for future action
+demonstrations; do not upload those placeholders.
 
 8. FUTURE LANDING PAGE HANDOFF
 Use the supplied monkey, font, favicon, and share graphics. Paper and Ink

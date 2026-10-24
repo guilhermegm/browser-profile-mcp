@@ -1,0 +1,130 @@
+BROWSER PROFILE MCP — REVIEWER INSTRUCTIONS
+Extension version: 0.5.3
+
+OVERVIEW
+This extension controls existing regular Chrome tabs through a separate local
+Node.js MCP bridge. It does not have a developer-hosted account, dashboard,
+or test login. No login to OpenAI or Claude is needed inside Chrome. A local
+coding-agent client is the usual controller; its account requirements are
+independent. A provider-independent SDK client can also exercise the tools.
+
+NORMAL SETUP
+1. Use Chrome 118+ on the same computer as the coding-agent client. Install
+   and enable the submitted extension in a regular profile. Open a harmless
+   public HTTP(S) page, such as https://example.com, in that profile.
+2. Click Browser Profile MCP in the extensions menu to open its side panel.
+3. Name this profile review. Copy the setup prompt into a local coding agent
+   with terminal/file tools and stdio MCP support. The prompt identifies the
+   matching bridge release and asks the agent to verify SHA256SUMS, install
+   Node.js 20+ / npm dependencies, and register browser-review for this user.
+   Bundled local-helper/ source is an alternative if downloads are restricted.
+4. Paste the code the agent returns into the extension and click Connect.
+   Pairing codes are created on the reviewer's computer; no shared test
+   credential or developer code is needed.
+5. Start a new session in the coding-agent client. Send:
+   Use browser-review MCP to list my open tabs.
+   Expected: the agent returns the profile's open HTTP(S) tabs; the panel
+   reports Connected. The agent starts the bridge automatically.
+6. On the example.com tab, ask the agent to read the page title and first
+   paragraph, inspect its visible informational link, and take a screenshot.
+   Use the tab ID returned by tabs. Reads and screenshots require debugger
+   attachment; Chrome displays its debugging notice while attached.
+7. Ask the agent to click that link. The visible cursor travels to
+   the link. The browser navigates normally. Use only harmless review pages
+   and avoid testing submissions on real accounts.
+8. Close the side panel and list tabs again: background control remains
+   available. Reopen the panel, expand Connection settings, and Disconnect.
+   Further browser commands should report that this profile is disconnected.
+   Reconnect resumes the saved pairing. Stop current actions cancels pending
+   work; it cannot reverse actions a website already received.
+
+WITHOUT AN AI ACCOUNT
+The following uses the official MCP client dependency already declared by the
+bridge. It does not call an AI provider and does not change agent settings.
+
+1. Download browser-profile-mcp-bridge-v0.5.3.zip and SHA256SUMS from:
+   https://github.com/guilhermegm/browser-profile-mcp/releases/tag/v0.5.3
+   Verify the ZIP's SHA-256 against the corresponding SHA256SUMS line with
+   your platform's hash tool. Unzip into a writable folder. Alternatively use
+   the submitted extension's local-helper/ folder, copied outside Chrome.
+2. In the helper folder, with Node.js 20+ and npm installed, run:
+   npm ci --omit=dev --ignore-scripts
+   node bridge.js profile review
+   If review is already in use, choose a fresh name and replace it below.
+   If the default port is occupied, use --port with a free local port and
+   retain that same port below. Do not reset an existing user's pairing.
+3. Paste only the printed pairing code into the installed extension. Do not
+   post it in review notes or issues. Keep the helper in its installation
+   folder and keep a regular Chrome window open in that profile.
+4. Save the following as review.mjs in the helper folder. Run node review.mjs
+   while the extension is enabled. This lists tabs without reading pages.
+   It does not launch Chrome, access cookies, or call an AI provider.
+
+----- review.mjs -----
+import { Client } from '@modelcontextprotocol/client';
+import { StdioClientTransport } from '@modelcontextprotocol/client/stdio';
+import { fileURLToPath } from 'node:url';
+
+const client = new Client({ name: 'cws-review', version: '1.0.0' }, {
+  supportedProtocolVersions: ['2025-11-25', '2025-06-18', '2025-03-26'],
+  versionNegotiation: { mode: 'legacy' },
+});
+try {
+  await client.connect(new StdioClientTransport({
+    command: process.execPath,
+    args: [fileURLToPath(new URL('./mcp.js', import.meta.url)), 'review', '--port', '9333'],
+    stderr: 'inherit',
+  }));
+  const result = await client.callTool({ name: 'tabs', arguments: {} });
+  if (result.isError) throw new Error(JSON.stringify(result.content));
+  for (const part of result.content) if (part.type === 'text') console.log(part.text);
+  // To inspect a harmless tab, add calls here using its returned numeric tabId:
+  // await client.callTool({ name: 'read', arguments: { tabId, maxChars: 1000 } });
+  // await client.callTool({ name: 'screenshot', arguments: { tabId } });
+  // Obtain click refs with snapshot/find before using act; never invent refs.
+} finally {
+  await client.close();
+}
+----- end review.mjs -----
+
+Chrome can take a few seconds to reconnect after the launcher starts the bridge.
+The panel will show Connected while this SDK client is attached. A short-lived
+client exits after listing tabs, so the panel can return to Waiting for agent.
+This is expected. Keep a client attached for interactive page-control review.
+The managed bridge stops after its clients have gone; no daily npm start step
+is required. Do not run node bridge.js separately for the normal flow.
+
+BOUNDARIES AND PERMISSIONS
+• debugger: packaged inspection and input functions, on demand. The developer
+  does not receive arbitrary JavaScript or an arbitrary CDP execution endpoint.
+• tabs: titles/URLs and create/focus/close/navigation in this regular profile.
+• storage: saved local pairing, installation identity, connection preferences.
+• alarms: background reconnect after the local agent starts its bridge.
+• sidePanel: setup and connection controls.
+• http://127.0.0.1/*: communication only with the user's local bridge; the port
+  is saved in the pairing. Command payloads are authenticated and encrypted.
+• Clipboard shortcuts default off. Enabling the setting allows the agent's
+  copy/cut/paste shortcuts to use the system clipboard, shared across apps.
+• Internal chrome:// pages, Chrome Web Store pages, and incognito are excluded.
+• Each installed Chrome profile requires its own pairing. Several sessions
+  using the same pairing can share one profile and its actual page state.
+
+DATA AND EXTERNAL DEPENDENCIES
+Requested browser content passes to the local agent, which may forward it to
+its AI provider. No analytics or developer browser-control service is included.
+Downloads use GitHub Releases and npm over their normal HTTPS services. The
+Node bridge is a separate local program; its npm dependencies are not loaded
+or run as remote code inside the extension. All extension logic is packaged.
+Browser actions can change data in logged-in websites. This review does not
+need real user accounts, existing pairing files, or sensitive browsing data.
+
+CLEANUP
+Disconnect, then Redo setup in the panel. Remove only the browser-review MCP
+entry if you added one. Delete your disposable helper installation, including
+its .browser-mcp/ directory. Uninstall the extension if no longer required.
+Redo setup alone does not delete the helper files or client registration.
+
+SUPPORT
+https://github.com/guilhermegm/browser-profile-mcp/issues
+Privacy: https://github.com/guilhermegm/browser-profile-mcp/blob/main/PRIVACY.md
+Private vulnerability reports: the repository's Security tab.
