@@ -1,6 +1,6 @@
 {
   "name": "browser-profile-mcp",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "private": true,
   "type": "module",
   "description": "Control existing Chrome profiles through a local MCP bridge.",

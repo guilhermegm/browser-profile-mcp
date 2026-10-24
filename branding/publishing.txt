@@ -74,8 +74,8 @@ Name: Browser Profile MCP (keep this order and spelling).
 Tagline: Your browser, your coding agent.
 Mark: Proboscis Monkey, the supplied orange monkey with browser and MCP folders.
 Source: logo/monkey-source.png, preserved byte for byte. Keep its original colors,
-proportions, and original black background. Exports resize the supplied artwork
-without removing the background or recoloring it.
+proportions, and original transparent background. Exports resize the supplied artwork
+without adding a background or recoloring it.
 Use the supplied 128 px CWS icon with its 16 px transparent outer padding.
 Type: Geist 650 for the identity and headlines; 450 for body copy.
 The variable font is bundled locally under the SIL Open Font License; see

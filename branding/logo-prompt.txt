@@ -1,23 +1,23 @@
-BROWSER PROFILE MCP — PROBOSCIS MONKEY LOGO BRIEF
+BROWSER PROFILE MCP — TRANSPARENT PROBOSCIS MONKEY FOLDER ICON
 
-The production logo is the supplied PNG in logo/monkey-source.png.
-Reuse that file rather than generating a different monkey for each asset.
-Keep the original orange and cream monkey, long rounded nose, navy browser
-window, blue MCP folders, white lettering, proportions, and black background.
-The supplied image is opaque RGB artwork; do not describe it as transparent.
+The production logo is the supplied PNG in logo/monkey-source.png, originally
+named Proboscis Monkey MCP Folder Icon.png. Reuse this exact artwork for all
+assets. Keep its orange and cream monkey, long rounded nose, navy browser
+window, blue folders, white MCP lettering, proportions, and transparency.
+The source has a real alpha channel. Do not add a solid background or backplate.
 
 For exploration only, a self-contained recreation prompt:
-Create a polished app icon for Browser Profile MCP. An orange proboscis monkey
-in side profile faces right, with a prominent long rounded nose, a dark eye,
-cream cheek and chest fur, and a sweeping curved body. A dark navy browser
-window sits behind the monkey, with red, yellow, and turquoise round controls
-and a warm-white content area. Overlapping vivid blue profile folders sit in
-the lower right, with large clean white MCP lettering on the front folder.
-Smooth dimensional shading, orange and cream fur, blue and violet folders.
-Centered composition on a solid black square background. One icon, no extra
-labels or decorative elements outside the supplied design.
+Create a polished icon for Browser Profile MCP. An orange proboscis monkey in
+side profile faces right, with a prominent long rounded nose, dark eye, cream
+cheek and chest fur, and a curved body. Behind it is a dark navy browser window
+with red, yellow, and turquoise circular controls and a warm-white content
+area. Overlapping blue profile folders sit at the lower right with large clean
+white MCP lettering. Smooth dimensional shading, orange and cream fur, blue
+and violet folders. Center the icon on a genuinely transparent background.
+Preserve the white interior of the browser window. No background, checkerboard,
+extra labels, or elements outside the supplied design.
 
-Production assets are deterministic resizes of the supplied source, not
-new generated variants. Keep the source PNG unchanged. The CWS icon adds
-16 px transparent outer padding at 128 px. SVG layouts embed the PNG and
-outline their typography. Regenerate with python3 branding/build.py.
+Production assets are deterministic resizes of the supplied source. Keep
+its original colors and alpha. The 128 px CWS icon adds 16 px transparent
+outer padding. SVG layouts embed the PNG and outline their typography.
+Regenerate with python3 branding/build.py.

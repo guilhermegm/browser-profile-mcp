@@ -1,11 +1,11 @@
-BROWSER PROFILE MCP — ASSET PROMPTS / IDENTITY 05
+BROWSER PROFILE MCP — ASSET PROMPTS / IDENTITY 06
 
 SHARED DIRECTION
 Name: Browser Profile MCP. Tagline: Your browser, your coding agent.
 Campaign line: Your browser. Agent connected.
 Use the full-color monkey artwork supplied in logo/monkey-source.png. Preserve its
 orange and cream monkey, navy browser frame, blue MCP folders, highlights,
-and original opaque black background. Reuse this exact asset on both light and dark surfaces.
+and original transparent background. Reuse this exact asset on both light and dark surfaces.
 Do not redraw, recolor, flatten, or replace it with the previous mosaic logo.
 
 Ink #17181B and Paper #FAF9F6 for type and surfaces. Geist 650 for headlines
@@ -18,7 +18,7 @@ Set Browser Profile as the primary name with a small outlined MCP tag beside it.
 The production source is logo/monkey-source.png, preserved unchanged. Read the
 brief in logo-prompt.txt for reuse guidance and an exploration prompt.
 Toolbar icons are resized directly from the supplied artwork after trimming
-empty margins. Preserve the original black background; add no new backplate. The CWS icon has 16 px of
+empty margins. Preserve the original transparent background; add no new backplate. The CWS icon has 16 px of
 transparent outer padding. SVG layouts embed the supplied PNG rather than tracing it.
 
 2. CHROME WEB STORE SMALL TILE — 440 x 280
