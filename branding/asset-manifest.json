@@ -1,0 +1,287 @@
+{
+  "name": "Browser Profile MCP",
+  "assets": [
+    {
+      "file": "brand-board.png",
+      "width": 1600,
+      "height": 1200,
+      "mode": "RGB",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "brand-board.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "cws/capture-templates/01-existing-browser.png",
+      "width": 1280,
+      "height": 800,
+      "mode": "RGB",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/capture-templates/01-existing-browser.svg",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/capture-templates/02-separate-profiles.png",
+      "width": 1280,
+      "height": 800,
+      "mode": "RGB",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/capture-templates/02-separate-profiles.svg",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/capture-templates/03-shared-agents.png",
+      "width": 1280,
+      "height": 800,
+      "mode": "RGB",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/capture-templates/03-shared-agents.svg",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/capture-templates/04-visible-actions.png",
+      "width": 1280,
+      "height": 800,
+      "mode": "RGB",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/capture-templates/04-visible-actions.svg",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/capture-templates/05-your-controls.png",
+      "width": 1280,
+      "height": 800,
+      "mode": "RGB",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/capture-templates/05-your-controls.svg",
+      "status": "capture-template-only"
+    },
+    {
+      "file": "cws/promo-marquee-1400x560.png",
+      "width": 1400,
+      "height": 560,
+      "mode": "RGB",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "cws/promo-marquee-1400x560.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "cws/promo-small-440x280.png",
+      "width": 440,
+      "height": 280,
+      "mode": "RGB",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "cws/promo-small-440x280.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "cws/store-icon-128.png",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "icons/icon-1024.png",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "icons/icon-1024.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "icons/icon-128.png",
+      "width": 128,
+      "height": 128,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "icons/icon-16.png",
+      "width": 16,
+      "height": 16,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "icons/icon-256.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "icons/icon-32.png",
+      "width": 32,
+      "height": 32,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "icons/icon-48.png",
+      "width": 48,
+      "height": 48,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "icons/icon-512.png",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/fox-source.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/mark-ink.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/mark-ink.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/mark-inverse.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/mark-inverse.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/mark.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/mark.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/wordmark-inverse.png",
+      "width": 700,
+      "height": 112,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/wordmark-inverse.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/wordmark.png",
+      "width": 700,
+      "height": 112,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/wordmark.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/apple-touch-icon-180.png",
+      "width": 180,
+      "height": 180,
+      "mode": "RGB",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/connection-diagram-1280x640.png",
+      "width": 1280,
+      "height": 640,
+      "mode": "RGB",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/connection-diagram-1280x640.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/favicon-16.png",
+      "width": 16,
+      "height": 16,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/favicon-32.png",
+      "width": 32,
+      "height": 32,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/favicon-48.png",
+      "width": 48,
+      "height": 48,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/favicon.ico",
+      "width": 48,
+      "height": 48,
+      "mode": "RGBA",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/favicon.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/og-image-1200x630.png",
+      "width": 1200,
+      "height": 630,
+      "mode": "RGB",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/og-image-1200x630.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/repository-social-1280x640.png",
+      "width": 1280,
+      "height": 640,
+      "mode": "RGB",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "website/repository-social-1280x640.svg",
+      "status": "ready-artwork"
+    }
+  ]
+}

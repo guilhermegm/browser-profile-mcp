@@ -1,0 +1,15 @@
+Browser Profile MCP is licensed under the MIT License; see LICENSE.
+
+Geist font
+The bundled Geist font is distributed under the SIL Open Font License 1.1.
+Its copyright notices and full license are preserved in branding/fonts/OFL.txt
+and extension/fonts/OFL.txt. The MIT License does not replace that license.
+
+Dependencies
+The Node.js dependencies retain their respective licenses. Their versions and
+upstream distributions are recorded in package-lock.json. Dependencies are
+installed on the user's computer rather than bundled with the bridge source.
+
+Artwork
+The fox artwork supplied for this project is included with the project under
+the MIT License. This license does not grant rights to third-party trademarks.

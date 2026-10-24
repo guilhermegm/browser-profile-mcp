@@ -1,0 +1,21 @@
+BROWSER PROFILE MCP — GLOSSY FOX LOGO BRIEF
+
+The production logo is the supplied transparent PNG in logo/fox-source.png.
+Reuse that file rather than generating a different fox for each asset.
+Keep the original blue/violet gradients, highlights, proportions, browser
+window, stacked folders, and white MCP lettering. Preserve true alpha.
+
+For exploration only, a self-contained recreation prompt:
+Create a polished glossy app icon for Browser Profile MCP. A blue and violet
+fox in side profile faces right, with a pointed ear and a sweeping curved
+body. Behind it is a dark navy browser-window frame with red, yellow, and
+green circular controls. Overlapping blue profile folders sit in the lower
+right, with large clean white MCP lettering on the front folder. Use smooth
+saturated blue-to-violet gradients and subtle dimensional highlights.
+Centered square composition. A genuinely transparent background, including
+inside the browser window; no checkerboard, solid background, or extra text.
+
+Production exports are deterministic crops/resizes of the supplied source,
+not generated variants. The source file is preserved unchanged. PNG exports
+retain alpha; SVG publication layouts embed the PNG and outline the type.
+Regenerate assets with python3 branding/build.py.

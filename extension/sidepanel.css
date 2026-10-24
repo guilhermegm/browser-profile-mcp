@@ -1,0 +1,134 @@
+@font-face {
+  font-family: Geist;
+  src: url("fonts/Geist.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  font: 13px/1.5 Geist, system-ui, sans-serif;
+  color: #17181b;
+  background: #faf9f6;
+  --muted: #6e706a;
+  --line: #e4e3de;
+  --accent: #ce482e;
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body { display: flex; flex-direction: column; min-height: 100vh; margin: 0; padding: 20px; }
+header { display: flex; align-items: center; gap: 10px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.mark { display: block; flex: 0 0 35px; width: 35px; height: 35px; }
+h1 { font-size: 16px; line-height: 1.25; margin: 0; letter-spacing: -.5px; font-weight: 650; }
+header p { font-size: 11px; margin: 3px 0 0; color: var(--muted); }
+p { color: #646660; margin: 8px 0 12px; overflow-wrap: anywhere; }
+.step { padding: 22px 0; border-bottom: 1px solid var(--line); }
+h2 { font-size: 15px; line-height: 1.4; font-weight: 650; letter-spacing: -.25px; margin: 0 0 12px; }
+h2 label { display: block; }
+input:not([type="checkbox"]), textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d4d4ce;
+  border-radius: 8px;
+  background: #fff;
+  color: #17181b;
+  font: inherit;
+}
+textarea { resize: vertical; min-height: 76px; font: 12px/1.5 ui-monospace, monospace; }
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  min-height: 38px;
+  padding: 9px 12px;
+  margin-top: 10px;
+  border: 1px solid #17181b;
+  border-radius: 8px;
+  background: #17181b;
+  color: #fff;
+  font: inherit;
+  font-weight: 550;
+  cursor: pointer;
+  transition: background-color 120ms, border-color 120ms;
+}
+button:hover { background: #30312e; border-color: #30312e; }
+button:disabled { opacity: .4; cursor: default; }
+button:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+svg { display: block; flex: 0 0 auto; width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.secondary { background: transparent; border-color: #d4d4ce; color: #17181b; }
+.secondary:hover { background: #f0efea; border-color: #b5b6af; }
+.quiet { background: transparent; border-color: transparent; color: #646660; font-weight: 450; }
+.quiet:hover { background: #f0efea; border-color: transparent; }
+.note { font-size: 11px; }
+#bootstrap-name-hint:empty { display: none; }
+
+#connected-step { padding: 18px 0 0; border: 0; }
+.profile-strip { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 12px; margin-bottom: 26px; }
+.profile-identity { display: flex; align-items: center; gap: 7px; min-width: 0; }
+.profile-identity svg { width: 17px; height: 17px; color: #8b8c85; }
+.profile-identity strong { font-size: 12px; font-weight: 550; overflow-wrap: anywhere; }
+.connection-state { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 11px; white-space: nowrap; }
+.dot { flex: 0 0 5px; width: 5px; height: 5px; border-radius: 50%; background: #b1b2ab; }
+.dot.online { background: #258453; }
+.connection-state:has(.online) { color: #258453; }
+.eyebrow { color: var(--accent); font-size: 10px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; margin: 0 0 7px; }
+.connection-heading h2 { font-size: 21px; font-weight: 600; line-height: 1.2; letter-spacing: -.65px; margin: 0; }
+.connection-copy { max-width: 36ch; font-size: 13px; line-height: 1.6; margin: 10px 0 18px; }
+.message-card { padding: 13px; border: 1px solid var(--line); border-radius: 11px; background: #fff; box-shadow: 0 2px 4px #17181b03; }
+.task-prompt { padding: 0 1px; color: #30312e; font: 12px/1.75 ui-monospace, monospace; margin: 0 0 13px; user-select: all; }
+.message-card button { margin: 0; min-height: 36px; font-size: 12px; }
+.message-card button svg { width: 14px; height: 14px; }
+.connection-actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2px 12px; padding: 11px 0; }
+.text-button { width: auto; min-height: 32px; padding: 5px 0; margin: 0; border: 0; border-radius: 4px; background: transparent; color: #646660; font-size: 11px; font-weight: 450; }
+.text-button:hover { background: transparent; color: #17181b; text-decoration: underline; text-underline-offset: 3px; }
+.text-button svg { width: 13px; height: 13px; }
+details { font-size: 12px; margin-top: 16px; }
+summary { cursor: pointer; font-weight: 500; }
+.more-controls { margin-top: 0; padding: 14px 0; border-top: 1px solid var(--line); }
+.more-controls summary { color: var(--muted); font-size: 11px; }
+.more-controls[open] summary { margin-bottom: 14px; }
+.clipboard-option { display: block; margin-top: 16px; font-size: 12px; }
+.clipboard-option input { margin-right: 5px; accent-color: #17181b; }
+#error, .notice { padding: 11px; margin: 16px 0 0; border: 1px solid #f2d2c9; border-radius: 8px; background: #fff0eb; color: #923e2c; font-size: 12px; }
+.toast {
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 11px 15px 11px 12px;
+  border: 1px solid #ffffff12;
+  border-radius: 999px;
+  background: #242622;
+  color: #fafbf8;
+  box-shadow: 0 4px 8px #17181b12, 0 12px 32px #17181b24;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.toast.visible { opacity: 1; transform: translate(-50%, 0); }
+.toast-check { width: 18px; height: 18px; stroke: #92d7a5; }
+.toast-check circle { fill: #92d7a518; stroke: none; }
+footer { color: var(--muted); font-size: 10px; margin-top: auto; padding-top: 20px; }
+@media (max-width: 300px) {
+  body { padding: 16px; }
+  .connection-heading h2 { font-size: 20px; }
+  .profile-strip { margin-bottom: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  button, .toast { transition: none; }
+  .toast, .toast.visible { transform: translateX(-50%); }
+}
+[hidden] { display: none !important; }

@@ -1,0 +1,38 @@
+{
+  "name": "browser-profile-mcp",
+  "version": "0.5.1",
+  "private": true,
+  "type": "module",
+  "description": "Control existing Chrome profiles through a local MCP bridge.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guilhermegm/browser-profile-mcp.git"
+  },
+  "homepage": "https://github.com/guilhermegm/browser-profile-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/guilhermegm/browser-profile-mcp/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node bridge.js",
+    "profile": "node bridge.js profile",
+    "test": "node --test test/onboarding.test.js test/scheduler.test.js test/security.test.js test/bridge.test.js test/package-helper.test.js test/sidepanel.test.js test/release.test.js",
+    "test:browser": "node --test test/browser.e2e.js",
+    "test:all": "npm test && npm run test:browser",
+    "build:helper": "node scripts/package-helper.mjs",
+    "build:release": "npm run build:helper && python3 scripts/package-release.py"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "^2.3.1",
+    "@modelcontextprotocol/node": "^2.1.1",
+    "@modelcontextprotocol/server": "^2.3.1",
+    "ws": "^8.18.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1"
+  }
+}

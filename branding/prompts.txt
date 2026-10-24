@@ -1,0 +1,82 @@
+BROWSER PROFILE MCP — ASSET PROMPTS / IDENTITY 04
+
+SHARED DIRECTION
+Name: Browser Profile MCP. Tagline: Your browser, your coding agent.
+Campaign line: Your browser. Agent connected.
+Use the full-color fox artwork supplied in logo/fox-source.png. Preserve its
+blue/violet gradients, browser frame, stacked MCP folders, highlights, and real
+transparent background. Reuse this exact asset on both light and dark surfaces.
+Do not redraw, recolor, flatten, or replace it with the previous mosaic logo.
+
+Ink #17181B and Paper #FAF9F6 for type and surfaces. Geist 650 for headlines
+and identity, 450 for body. Signal #F15B3A remains an accent for cursor activity
+and useful UI feedback. Keep publication layouts simple with generous space,
+clear typography, and fine rules. Do not add effects or backgrounds to the fox.
+Set Browser Profile as the primary name with a small outlined MCP tag beside it.
+
+1. LOGO
+The production source is logo/fox-source.png, preserved unchanged. Read the
+brief in logo-prompt.txt for reuse guidance and an exploration prompt.
+Toolbar icons are resized directly from the supplied artwork after trimming
+empty margins. Preserve alpha; add no backplate. The CWS icon has 16 px of
+transparent outer padding. SVG layouts embed the PNG rather than tracing it.
+
+2. CHROME WEB STORE SMALL TILE — 440 x 280
+Paper background. Product signature at upper left. Large Ink headline:
+Your browser. / Agent connected. Small line at lower left: EXISTING CHROME
+PROFILES. Small full-color fox at lower right. Keep the actual name and
+headline readable at reduced size. Opaque PNG and self-contained SVG layout.
+Production: cws/promo-small-440x280.svg and .png.
+
+3. CHROME WEB STORE MARQUEE — 1400 x 560
+Ink background, Paper typography and full-color fox. Signature upper left. Large
+headline: Your browser. / Agent connected. Large full-color fox at right.
+Fine footer rule. CODEX / CLAUDE CODE / MCP AGENTS at left; Existing profiles.
+Existing tabs. at right. Opaque PNG and self-contained SVG layout.
+Production: cws/promo-marquee-1400x560.svg and .png.
+
+4. WEBSITE CONNECTION ILLUSTRATION — 1280 x 640
+Conceptual diagram on Paper. Codex and Claude Code at left, the supplied fox
+and Local MCP bridge label in the middle, Work and Personal profiles at
+right. Fine orthogonal connectors. Header: Your agent. Your profiles.
+Explain that each profile has its own pairing. No third-party logos, fake
+screenshots, private data, tokens, or isolation/security guarantees.
+Production: website/connection-diagram-1280x640.svg and .png.
+
+5. OPEN GRAPH / SHARE CARD — 1200 x 630
+Paper field, Ink headline at left: Your browser. / Agent connected.
+Signature top left, full-color fox at right. Bottom Ink strip: BROWSER CONTROL
+THROUGH MCP and Your existing Chrome profiles and tabs.
+Production: website/og-image-1200x630.svg and .png.
+
+6. REPOSITORY SOCIAL PREVIEW — 1280 x 640
+Ink field, Paper headline: The browser / you already use. Signature upper
+left, full-color fox at right. Thin footer rule. CONNECTED TO YOUR CODING AGENT
+and Codex / Claude Code / MCP. Opaque PNG and self-contained SVG layout.
+Production: website/repository-social-1280x640.svg and .png.
+
+7. REAL PRODUCT SCREENSHOTS — 1280 x 800, UP TO FIVE
+Capture the real extension on harmless pages. Redact personal data and pairing
+codes. Use Paper margins, the small current signature, and one Ink headline.
+Show real profiles, agent actions, visible cursor, and connection controls.
+The files in cws/capture-templates/ are draft layouts, not product captures.
+Replace their marked placeholders with real captures before uploading.
+
+8. FUTURE LANDING PAGE HANDOFF
+Use the supplied fox, font, favicon, and share graphics. Paper and Ink
+surfaces, Geist typography, generous space. Hero: Your browser. Agent connected.
+Supporting copy: Connect Codex, Claude Code, and other MCP agents to the Chrome
+profiles and tabs you already use. Explain existing logins, saved pairing,
+multiple agent sessions, visible actions, and connection controls.
+Setup: 1. Name this profile. 2. Copy the prompt into your coding agent.
+3. Paste the code it gives you. 4. Start a new agent session and send the
+message shown in the panel. The agent starts the bridge automatically.
+Use the current README for exact instructions. Do not invent a CWS URL,
+download count, customer quote, endorsement, security guarantee, or screenshot.
+Honor keyboard navigation, readable contrast, and reduced motion.
+
+EXPORTS / LICENSE
+Use logo/fox-source.png as the unchanged artwork source. SVG layouts embed
+the transparent PNG and outline their typography; they are not vector traces.
+The bundled Geist font and SIL Open Font License are in fonts/.
+Internal historical design references are excluded from the production kit.

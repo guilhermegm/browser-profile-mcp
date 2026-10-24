@@ -1,0 +1,99 @@
+BROWSER PROFILE MCP — PUBLICATION ASSET CHECKLIST
+Checked against Google's documentation on 2026-10-23.
+
+CHROME WEB STORE
+
+Required: 128 x 128 PNG icon.
+  Ready: cws/store-icon-128.png, also extension/icons/icon-128.png.
+  Artwork is 96 x 96, with 16 transparent pixels on every side.
+
+Required: at least one actual extension screenshot; maximum five.
+  Use 1280 x 800 (recommended here); Google's image guide also permits 640 x 400.
+  Use square canvas corners and full bleed. Show the actual current experience.
+  Pending: real product captures. cws/capture-templates/ contains marked draft
+  layouts and capture briefs only. Do not upload those drafts as screenshots.
+  Preserve the extension UI and redact personal data, pairing codes, tokens,
+  email addresses, and private page content. No browser session was accessed to
+  create this kit.
+
+Optional: small promotional tile, 440 x 280 PNG or JPEG.
+  Ready: cws/promo-small-440x280.png, with editable SVG alongside it.
+
+Optional: marquee promotional tile, 1400 x 560 PNG or JPEG.
+  Ready: cws/promo-marquee-1400x560.png, with editable SVG alongside it.
+
+Optional: a real product video hosted on YouTube.
+  Suggested 20-40 second sequence: show an existing profile; show the paired
+  side panel; ask an agent to read a harmless page; show the visible cursor;
+  close the side panel while the connection remains active. Record working
+  behavior from a verified build; do not generate a simulated demonstration.
+
+EXTENSION PACKAGE
+
+Ready: extension/icons/icon-16.png, icon-32.png, icon-48.png, icon-128.png.
+These are wired into manifest.json. Chrome manifest icons need raster images;
+SVG files are editable masters for the brand, not manifest icon replacements.
+Upload only the extension folder as the extension ZIP, not this entire repository
+or the brand-kit archive. Run npm run build:helper before packaging: the
+local-helper/ folder carries the Node helper source for the coding agent to
+install outside Chrome. The extension first shows a copyable agent setup prompt.
+The agent can download the matching bridge ZIP and SHA256SUMS from
+https://github.com/guilhermegm/browser-profile-mcp/releases . Bundled helper
+source remains a fallback. Node is a local runtime requirement; the setup
+agent checks and installs it as needed. npm run build:release packages the
+bridge and extension with explicit file allowlists and no runtime credentials.
+Branding assets alone do not constitute a complete CWS submission: review
+functionality, permission justifications, privacy practices, support information,
+distribution settings, and the actual captures before publishing.
+
+WEBSITE / REPOSITORY
+
+Ready: logo/fox-source.png (the unchanged supplied artwork) and logo/mark.png.
+Ready: logo/wordmark.svg and logo/wordmark-inverse.svg, plus PNG versions.
+SVG layouts embed the transparent PNG artwork; they do not trace it into vectors.
+Ready: website/favicon.svg, favicon.ico, and PNG favicon sizes 16, 32, 48.
+Ready: website/apple-touch-icon-180.png.
+Ready: website/og-image-1200x630.png.
+Ready: website/repository-social-1280x640.png.
+Ready: website/connection-diagram-1280x640.svg and PNG (explicit concept diagram).
+
+Example HTML metadata (substitute real published URLs):
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-180.png">
+  <meta property="og:title" content="Browser Profile MCP">
+  <meta property="og:description" content="Connect coding agents to your existing Chrome profiles and tabs.">
+  <meta property="og:image" content="ABSOLUTE_PUBLISHED_URL/assets/og-image-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+BRAND USAGE
+
+Name: Browser Profile MCP (keep this order and spelling).
+Tagline: Your browser, your coding agent.
+Mark: Glossy Fox, the supplied blue/violet fox with browser and MCP folders.
+Source: logo/fox-source.png, preserved byte for byte. Keep its original colors,
+proportions, and real transparent background. Exports trim empty source margins
+and resize from that artwork without adding a backplate or recoloring it.
+Use the supplied 128 px CWS icon with its 16 px transparent outer padding.
+Type: Geist 650 for the identity and headlines; 450 for body copy.
+The variable font is bundled locally under the SIL Open Font License; see
+fonts/OFL.txt. Exported SVG text is outlined and the fox PNG is embedded.
+The extension loads its own local font file without external font requests.
+Keep the supplied artwork and proportions. Do not add extra symbols,
+effects, backgrounds, or unverified product claims.
+Colors: Signal #F15B3A, Ink #17181B, Paper #FAF9F6, Quiet #64666B.
+Use Ink on Paper for text, Paper on Ink for dark banners. Keep the fox in full
+color on both. Signal remains an accent for cursor activity and focus indicators.
+Do not fill every interface control with the accent.
+
+Regenerate assets with: python3 branding/build.py
+Build-only dependencies: Pillow and FontTools (see requirements.txt).
+The generator uses the bundled Geist font; no system font installation is needed.
+The generator renders artwork and packages it; it does not run extension tests.
+
+Official sources:
+https://developer.chrome.com/docs/webstore/cws-dashboard-listing
+https://developer.chrome.com/docs/webstore/images
+https://developer.chrome.com/docs/extensions/develop/ui/configure-icons

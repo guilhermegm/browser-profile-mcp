@@ -1,0 +1,24 @@
+{
+  "name": "browser-profile-mcp-helper",
+  "version": "0.5.1",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guilhermegm/browser-profile-mcp.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "profile": "node bridge.js profile"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/client": "^2.3.1",
+    "@modelcontextprotocol/node": "^2.1.1",
+    "@modelcontextprotocol/server": "^2.3.1",
+    "ws": "^8.18.0",
+    "zod": "^4.0.0"
+  }
+}

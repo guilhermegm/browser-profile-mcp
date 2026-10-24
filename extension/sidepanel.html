@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Browser Profile MCP</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+    <link rel="stylesheet" href="sidepanel.css">
+  </head>
+  <body>
+    <header>
+      <img class="mark" src="icons/mark.png" alt="" width="35" height="35">
+      <div><h1>Browser Profile MCP</h1><p>Your browser, your coding agent.</p></div>
+    </header>
+
+    <p id="error" role="alert" hidden></p>
+    <p id="pairing-conflict" class="notice" hidden>This code belongs to another Chrome profile. Copy the setup prompt again and ask your agent for a new code.</p>
+
+    <section id="name-step" class="step">
+      <h2><label for="bootstrap-profile">1. Name this profile</label></h2>
+      <input id="bootstrap-profile" placeholder="e.g. work or personal" maxlength="40" autocomplete="off" spellcheck="false" aria-describedby="bootstrap-name-hint">
+      <p id="bootstrap-name-hint" class="note">Choose a name you will recognize.</p>
+    </section>
+
+    <section id="prompt-step" class="step">
+      <h2>2. Copy this prompt into your agent</h2>
+      <p>Paste it into Claude Code, Codex, or another local coding agent. Your agent handles the setup and gives you a code.</p>
+      <button id="copy-bootstrap" type="button" disabled>Copy setup prompt</button>
+    </section>
+
+    <form id="pair-form" class="step">
+      <h2><label for="pairing-code">3. Paste the code your agent gives you</label></h2>
+      <textarea id="pairing-code" rows="3" spellcheck="false" autocomplete="off" placeholder="Paste your pairing code"></textarea>
+      <button type="submit" id="pair">Connect</button>
+    </form>
+
+    <section id="connected-step" class="step" hidden aria-labelledby="connection-title">
+      <div class="profile-strip">
+        <div class="profile-identity">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="15" height="13" rx="3"/><path d="M3 7.5h14M6 5.5h.01M8.5 5.5h.01"/></svg>
+          <strong id="profile-name"></strong>
+        </div>
+        <span class="connection-state" role="status"><span id="status-dot" class="dot"></span><span id="connection-state"></span></span>
+      </div>
+      <div class="connection-heading">
+        <p id="connection-step-label" class="eyebrow">Step 4 of 4</p>
+        <h2 id="connection-title">Connect your agent</h2>
+      </div>
+      <p id="status" class="connection-copy"></p>
+      <div id="try-task" class="message-card" hidden>
+        <p id="first-task" class="task-prompt"></p>
+        <button id="copy-first-task" type="button">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h2"/></svg>
+          Copy message
+        </button>
+      </div>
+      <div class="connection-actions">
+        <button id="copy-another-agent" type="button" class="text-button">Connect another agent</button>
+        <button id="reconnect" type="button" class="text-button">
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16 8a6 6 0 1 0 .1 3M16 3v5h-5"/></svg>
+          Reconnect
+        </button>
+      </div>
+      <details class="more-controls">
+        <summary>Connection settings</summary>
+        <button id="toggle" type="button" class="secondary">Disconnect</button>
+        <button id="release" type="button" class="secondary">Stop current actions</button>
+        <label class="clipboard-option"><input id="clipboard-allowed" type="checkbox"> Allow system clipboard shortcuts</label>
+        <p class="note">The system clipboard is shared with other profiles and apps.</p>
+        <button id="forget" type="button" class="quiet" title="Remove the pairing from this extension and return to step 1">Redo setup</button>
+      </details>
+      <details id="connection-issue" hidden>
+        <summary>Last connection interruption</summary>
+        <p id="connection-issue-detail"></p>
+      </details>
+    </section>
+
+    <div id="copy-toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+      <svg class="toast-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="m6 10 2.5 2.5L14 7"/></svg>
+      <span id="copy-status"></span>
+    </div>
+    <footer id="pairing-note" hidden>Pairing saved. You can close this panel.</footer>
+    <script src="sidepanel.js" type="module"></script>
+  </body>
+</html>
