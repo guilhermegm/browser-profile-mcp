@@ -23,7 +23,8 @@
     "test:browser": "node --test test/browser.e2e.js",
     "test:all": "npm test && npm run test:browser",
     "build:helper": "node scripts/package-helper.mjs",
-    "build:release": "npm run build:helper && python3 scripts/package-release.py"
+    "build:release": "npm run build:helper && python3 scripts/package-release.py",
+    "capture:setup": "node scripts/capture-setup.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/client": "^2.3.1",

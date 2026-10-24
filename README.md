@@ -22,6 +22,21 @@ The bridge needs Node.js 20+ and npm. Its source is also bundled inside the exte
 3. **Paste the code your agent gives you** and click **Connect**.
 4. **Start a new agent session.** Open a new session in your coding agent, then send the message shown in the panel, such as `Use browser-work MCP to list my open tabs.` Use **Copy message** to copy it. The panel switches to **Connected** when your agent connects.
 
+<table>
+  <tr>
+    <th>1–3. Pair this profile</th>
+    <th>4. Start your agent session</th>
+    <th>Connected</th>
+  </tr>
+  <tr>
+    <td valign="top"><a href="docs/screenshots/01-pair-profile.png"><img src="docs/screenshots/01-pair-profile.png" width="280" alt="Extension setup: name the profile work, copy the setup prompt, and paste the pairing code returned by your agent."></a></td>
+    <td valign="top"><a href="docs/screenshots/02-start-agent.png"><img src="docs/screenshots/02-start-agent.png" width="280" alt="After pairing, open a new agent session and copy the message: Use browser-work MCP to list my open tabs."></a></td>
+    <td valign="top"><a href="docs/screenshots/03-connected.png"><img src="docs/screenshots/03-connected.png" width="280" alt="The extension reports Connected after the coding agent attaches to the work profile."></a></td>
+  </tr>
+</table>
+
+Setup previews render the extension's actual panel with sample states for a profile named `work`. They contain no live account data or pairing codes. Click an image to enlarge it.
+
 The profile is registered once in the coding agent's user-level MCP configuration and works across its projects. There are no project-scope or provider-configuration dropdowns in the extension.
 
 The prompt includes the profile name, extension ID, and installation identity. The agent reuses an existing helper or downloads the matching bridge from GitHub Releases and verifies it against SHA256SUMS. It checks Node.js 20+, installs production dependencies, and registers its client. The helper source bundled in **`extension/local-helper/`** is a fallback. The agent returns a pairing code; users do not need to locate a repository or assemble commands. Setup does not launch another Chrome or run browser tests.
@@ -312,6 +327,8 @@ npm run profile -- work --port 9444
 The port is saved with the profile and retained when you print setup again or reset it. The older `BROWSER_MCP_PORT=9444` environment-variable form is also supported. An explicit flag takes precedence over the environment, then the saved port. Changing the port requires updating both the extension pairing and the agent's launcher configuration.
 
 ## Automated checks
+
+To refresh the setup previews, install the development dependencies and Playwright's Chromium, then run `npm run capture:setup`. This renders the actual panel HTML, CSS, and UI logic with sample setup states. It does not connect to a bridge, open existing Chrome profiles, or use the system clipboard.
 
 Run the unit and bridge integration tests:
 
