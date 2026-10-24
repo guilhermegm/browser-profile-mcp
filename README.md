@@ -169,7 +169,7 @@ Agent clicks, hovers, and scrolls show an orange arrow in the controlled tab. It
 
 The overlay ignores mouse input, stays out of accessibility snapshots and text reads, and is removed when disconnecting or navigating. It also expires automatically if Chrome detaches the debugger. A short, bounded travel delay makes actions visible without another model/tool round trip. Ref actions recheck the live target after travel, and clicks check again after hover feedback and immediately before pressing. A moving, removed, disabled, or covered target fails rather than clicking stale coordinates. Screenshot coordinates remain explicit positions; they do not identify a particular element.
 
-Version **0.5.1** adds guided agent registration, saved ports, pairing-conflict recovery, and connection verification. It retains the authenticated encrypted transport introduced in 0.5.0. Follow **Apply this update** below to reload the extension and reconnect your agents. Existing tabs, pairing codes, and stdio agent configuration can stay in place. Older extension/bridge versions cannot control this version through a compatibility fallback.
+Version **0.5.2** updates the extension, store artwork, website graphics, and setup previews with the supplied proboscis monkey icon. It includes guided agent registration, saved ports, pairing-conflict recovery, and connection verification. Follow **Apply this update** below to reload the extension and reconnect your agents.
 
 ### Debugger banner while idle
 
@@ -254,7 +254,7 @@ Protocol calls, debugger attachment, and Chrome APIs also have worker-side deadl
 ### Apply this update
 
 1. Reload **Browser Profile MCP** at `chrome://extensions` in each paired profile. Pairing is preserved.
-2. Stop the previous bridge as described below, then restart/reconnect your `browser-<profile>` MCP server in Codex and Claude Code so both clients load version **0.5.1** with the updated onboarding messages. The next connection starts the updated bridge automatically. Existing stdio configuration and saved pairing do not need to be regenerated.
+2. Stop the previous bridge as described below, then restart/reconnect your `browser-<profile>` MCP server in Codex and Claude Code so both clients load version **0.5.2**. The next connection starts the updated bridge automatically. Existing stdio configuration and saved pairing do not need to be regenerated.
 
 If an old bridge is still running, close its MCP connections in all agents and allow roughly a minute for automatic shutdown before reconnecting. A manually started bridge can be stopped with Ctrl+C.
 
@@ -370,7 +370,7 @@ Credentials and background logs are stored in `.browser-mcp/`, excluded by `.git
 
 The launcher and extension run on the same computer as the coding agent. The controller never starts Chrome or creates a browser window. Browser tool isolation is separate from the coding agent's terminal and filesystem permissions.
 
-**Status:** version 0.5.1 improves onboarding, scope selection, port persistence, authenticated pairing-conflict recovery, and per-session tab-access confirmation. It retains the security and optimization changes from 0.5.0. The noninteractive unit, encrypted-transport, and bridge/launcher integration suite passed on Node.js 20.17.0 on macOS. Browser checks are opt-in and remain incomplete after permission prompts interrupted the final browser run. See **Automated checks** above for scope and limits.
+**Status:** version 0.5.2 refreshes the artwork and setup previews with the supplied proboscis monkey icon. Noninteractive checks cover setup, encrypted transport, packaging, and bridge/launcher integration. Browser checks are opt-in; full Chrome/provider end-to-end validation remains incomplete. The README setup previews use sample UI states, not live account connections. See **Automated checks** above for scope and limits.
 
 
 ## Packaging the extension
@@ -383,7 +383,7 @@ Upload only the contents of `extension/` to CWS, with `manifest.json` at the ZIP
 
 ## Branding and publication assets
 
-Brand artwork, extension icons, Chrome Web Store promotions, website assets, and reusable prompts are in [`branding/`](branding/index.html). The current logo uses the supplied full-color fox artwork with its transparent background. The untouched source is `branding/logo/fox-source.png`; icon PNGs preserve alpha, and SVG layouts embed the raster artwork. Open `branding/index.html` for the visual guide, `branding/prompts.txt` for the prompt pack, and `branding/publishing.txt` for store requirements. Real product screenshots still need to be captured before publishing; the marked capture layouts are drafts.
+Brand artwork, extension icons, Chrome Web Store promotions, website assets, and reusable prompts are in [`branding/`](branding/index.html). The current logo uses the supplied full-color proboscis monkey artwork with its original black background. The untouched source is `branding/logo/monkey-source.png`; PNG exports retain that artwork, and SVG layouts embed the raster image. The 128 px store icon includes transparent outer padding. Open `branding/index.html` for the visual guide, `branding/prompts.txt` for the prompt pack, and `branding/publishing.txt` for store requirements. Real product screenshots still need to be captured before publishing; the marked capture layouts are drafts.
 
 ## License, privacy, and security
 

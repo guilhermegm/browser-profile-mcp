@@ -11,5 +11,5 @@ upstream distributions are recorded in package-lock.json. Dependencies are
 installed on the user's computer rather than bundled with the bridge source.
 
 Artwork
-The fox artwork supplied for this project is included with the project under
+The icon artwork supplied for this project is included with the project under
 the MIT License. This license does not grant rights to third-party trademarks.

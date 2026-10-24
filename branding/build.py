@@ -1,4 +1,4 @@
-"""Render the supplied transparent fox artwork and exact-size publication assets.
+"""Render the supplied logo artwork and exact-size publication assets.
 
 Requires Python 3, Pillow, and FontTools. This generates artwork; it does not start Chrome,
 exercise the extension, or access browser/profile data. Run from any directory.
@@ -18,7 +18,7 @@ _type = importlib.util.module_from_spec(_type_spec)
 _type_spec.loader.exec_module(_type)
 ROOT = Path(__file__).resolve().parent
 EXTENSION = ROOT.parent / 'extension' / 'icons'
-LOGO_SOURCE = ROOT / 'logo' / 'fox-source.png'
+LOGO_SOURCE = ROOT / 'logo' / 'monkey-source.png'
 COLORS = dict(signal='#F15B3A', paper='#FAF9F6', ink='#17181B', muted='#64666B',
               white='#FFFFFF', line='#DEDFDF', soft='#F0F0ED', inverse='#B9BBC0')
 FONT_STACK = "Geist, Arial, sans-serif"
@@ -265,7 +265,7 @@ def build_board():
     canvas = Canvas(1600, 1200, COLORS['paper'])
     canvas.rect(0, 0, 1600, 580, COLORS['ink'])
     wordmark(canvas, 64, 45, dark=True, size=48)
-    kicker(canvas, 1310, 62, 'IDENTITY / 04', True)
+    kicker(canvas, 1310, 62, 'IDENTITY / 05', True)
     canvas.text(64, 209, 'Your browser.', 100, COLORS['paper'], True)
     canvas.text(64, 324, 'Agent connected.', 100, COLORS['paper'], True)
     mark(canvas, 1200, 208, 274, COLORS['paper'])
@@ -276,8 +276,8 @@ def build_board():
     mark(canvas, 291, 691, 80)
     canvas.rect(283, 807, 96, 96, COLORS['ink'])
     mark(canvas, 300, 824, 62, COLORS['paper'])
-    canvas.text(64, 932, 'Glossy Fox', 26, bold=True)
-    canvas.text(64, 977, 'Full color. Transparent background.', 18, COLORS['muted'])
+    canvas.text(64, 932, 'Proboscis Monkey', 26, bold=True)
+    canvas.text(64, 977, 'Full color. Black source background.', 18, COLORS['muted'])
     canvas.text(64, 1006, 'Supplied artwork. Original colors.', 18, COLORS['muted'])
     canvas.line([(448,630),(448,1097)], COLORS['line'])
     kicker(canvas, 512, 630, '02 / TYPE')
@@ -299,7 +299,7 @@ def build_board():
         mark(canvas, x, 1001, size)
         canvas.text(x, 1124, str(size)+' px', 14, COLORS['muted'])
     canvas.line([(64,1158),(1536,1158)], COLORS['line'])
-    kicker(canvas, 64, 1175, 'BROWSER PROFILE MCP / SUPPLIED FOX ARTWORK', size=11)
+    kicker(canvas, 64, 1175, 'BROWSER PROFILE MCP / SUPPLIED MONKEY ARTWORK', size=11)
     canvas.text(1307, 1175, 'Your browser. Connected.', 13, COLORS['muted'])
     canvas.save('brand-board', opaque=True)
 
@@ -318,6 +318,8 @@ def inventory():
         rows.append(item)
     (ROOT / 'asset-manifest.json').write_text(json.dumps({'name': 'Browser Profile MCP', 'assets': rows}, indent=2)+'\n')
     with zipfile.ZipFile(ROOT / 'browser-profile-mcp-brand-kit.zip', 'w', compression=zipfile.ZIP_DEFLATED) as bundle:
+        for name in ('LICENSE', 'NOTICE'):
+            bundle.write(ROOT.parent / name, Path('browser-profile-mcp-brand-kit') / name)
         for path in sorted(ROOT.rglob('*')):
             if (path.is_file() and not path.is_symlink() and path.suffix.lower() in
                     ['.png', '.svg', '.ico', '.html', '.txt', '.json', '.py', '.ttf'] and

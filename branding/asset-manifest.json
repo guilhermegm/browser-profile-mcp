@@ -150,13 +150,6 @@
       "status": "ready-artwork"
     },
     {
-      "file": "logo/fox-source.png",
-      "width": 1254,
-      "height": 1254,
-      "mode": "RGBA",
-      "status": "ready-artwork"
-    },
-    {
       "file": "logo/mark-ink.png",
       "width": 256,
       "height": 256,
@@ -187,6 +180,13 @@
     },
     {
       "file": "logo/mark.svg",
+      "status": "ready-artwork"
+    },
+    {
+      "file": "logo/monkey-source.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
       "status": "ready-artwork"
     },
     {

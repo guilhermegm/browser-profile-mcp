@@ -1,21 +1,23 @@
-BROWSER PROFILE MCP — GLOSSY FOX LOGO BRIEF
+BROWSER PROFILE MCP — PROBOSCIS MONKEY LOGO BRIEF
 
-The production logo is the supplied transparent PNG in logo/fox-source.png.
-Reuse that file rather than generating a different fox for each asset.
-Keep the original blue/violet gradients, highlights, proportions, browser
-window, stacked folders, and white MCP lettering. Preserve true alpha.
+The production logo is the supplied PNG in logo/monkey-source.png.
+Reuse that file rather than generating a different monkey for each asset.
+Keep the original orange and cream monkey, long rounded nose, navy browser
+window, blue MCP folders, white lettering, proportions, and black background.
+The supplied image is opaque RGB artwork; do not describe it as transparent.
 
 For exploration only, a self-contained recreation prompt:
-Create a polished glossy app icon for Browser Profile MCP. A blue and violet
-fox in side profile faces right, with a pointed ear and a sweeping curved
-body. Behind it is a dark navy browser-window frame with red, yellow, and
-green circular controls. Overlapping blue profile folders sit in the lower
-right, with large clean white MCP lettering on the front folder. Use smooth
-saturated blue-to-violet gradients and subtle dimensional highlights.
-Centered square composition. A genuinely transparent background, including
-inside the browser window; no checkerboard, solid background, or extra text.
+Create a polished app icon for Browser Profile MCP. An orange proboscis monkey
+in side profile faces right, with a prominent long rounded nose, a dark eye,
+cream cheek and chest fur, and a sweeping curved body. A dark navy browser
+window sits behind the monkey, with red, yellow, and turquoise round controls
+and a warm-white content area. Overlapping vivid blue profile folders sit in
+the lower right, with large clean white MCP lettering on the front folder.
+Smooth dimensional shading, orange and cream fur, blue and violet folders.
+Centered composition on a solid black square background. One icon, no extra
+labels or decorative elements outside the supplied design.
 
-Production exports are deterministic crops/resizes of the supplied source,
-not generated variants. The source file is preserved unchanged. PNG exports
-retain alpha; SVG publication layouts embed the PNG and outline the type.
-Regenerate assets with python3 branding/build.py.
+Production assets are deterministic resizes of the supplied source, not
+new generated variants. Keep the source PNG unchanged. The CWS icon adds
+16 px transparent outer padding at 128 px. SVG layouts embed the PNG and
+outline their typography. Regenerate with python3 branding/build.py.

@@ -48,9 +48,9 @@ distribution settings, and the actual captures before publishing.
 
 WEBSITE / REPOSITORY
 
-Ready: logo/fox-source.png (the unchanged supplied artwork) and logo/mark.png.
+Ready: logo/monkey-source.png (the unchanged supplied artwork) and logo/mark.png.
 Ready: logo/wordmark.svg and logo/wordmark-inverse.svg, plus PNG versions.
-SVG layouts embed the transparent PNG artwork; they do not trace it into vectors.
+SVG layouts embed the supplied PNG artwork; they do not trace it into vectors.
 Ready: website/favicon.svg, favicon.ico, and PNG favicon sizes 16, 32, 48.
 Ready: website/apple-touch-icon-180.png.
 Ready: website/og-image-1200x630.png.
@@ -72,19 +72,19 @@ BRAND USAGE
 
 Name: Browser Profile MCP (keep this order and spelling).
 Tagline: Your browser, your coding agent.
-Mark: Glossy Fox, the supplied blue/violet fox with browser and MCP folders.
-Source: logo/fox-source.png, preserved byte for byte. Keep its original colors,
-proportions, and real transparent background. Exports trim empty source margins
-and resize from that artwork without adding a backplate or recoloring it.
+Mark: Proboscis Monkey, the supplied orange monkey with browser and MCP folders.
+Source: logo/monkey-source.png, preserved byte for byte. Keep its original colors,
+proportions, and original black background. Exports resize the supplied artwork
+without removing the background or recoloring it.
 Use the supplied 128 px CWS icon with its 16 px transparent outer padding.
 Type: Geist 650 for the identity and headlines; 450 for body copy.
 The variable font is bundled locally under the SIL Open Font License; see
-fonts/OFL.txt. Exported SVG text is outlined and the fox PNG is embedded.
+fonts/OFL.txt. Exported SVG text is outlined and the monkey PNG is embedded.
 The extension loads its own local font file without external font requests.
 Keep the supplied artwork and proportions. Do not add extra symbols,
 effects, backgrounds, or unverified product claims.
 Colors: Signal #F15B3A, Ink #17181B, Paper #FAF9F6, Quiet #64666B.
-Use Ink on Paper for text, Paper on Ink for dark banners. Keep the fox in full
+Use Ink on Paper for text, Paper on Ink for dark banners. Keep the monkey in full
 color on both. Signal remains an accent for cursor activity and focus indicators.
 Do not fill every interface control with the accent.
 

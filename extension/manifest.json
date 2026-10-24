@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Browser Profile MCP",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Let your local coding agent control this Chrome profile's existing tabs.",
   "minimum_chrome_version": "118",
   "incognito": "not_allowed",
