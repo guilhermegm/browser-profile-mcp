@@ -6,6 +6,7 @@ import { once } from 'node:events';
 import { readFile, mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { resolve, sep, extname, join } from 'node:path';
+import { VERSION } from '../extension/protocol.js';
 
 const extension = fileURLToPath(new URL('../extension/', import.meta.url));
 const output = fileURLToPath(new URL('../docs/screenshots/', import.meta.url));
@@ -59,17 +60,17 @@ try {
 
   await page.locator('#bootstrap-profile').fill('work');
   await page.waitForFunction(() => !document.getElementById('copy-bootstrap').disabled);
-  await capture('01-pair-profile.png');
+  await capture(`01-pair-profile-v${VERSION}.png`);
 
   await page.evaluate(() => globalThis.setDocumentationState({
     paired: true, enabled: true, connected: true, profileId: 'work', name: 'work', port: 9333,
   }));
   await page.locator('#connected-step').waitFor({ state: 'visible' });
-  await capture('02-start-agent.png');
+  await capture(`02-start-agent-v${VERSION}.png`);
 
   await page.evaluate(() => globalThis.setDocumentationState({ agentCount: 1, verifiedAgentCount: 1 }));
   await page.getByRole('heading', { name: "You're connected", exact: true }).waitFor();
-  await capture('03-connected.png');
+  await capture(`03-connected-v${VERSION}.png`);
   console.log('Captured three real-panel UI previews with sample data in docs/screenshots/.');
 } finally {
   await browser?.close();

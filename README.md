@@ -29,13 +29,13 @@ The bridge needs Node.js 20+ and npm. Its source is also bundled inside the exte
     <th>Connected</th>
   </tr>
   <tr>
-    <td valign="top"><a href="docs/screenshots/01-pair-profile.png"><img src="docs/screenshots/01-pair-profile.png" width="280" alt="Extension setup: name the profile work, copy the setup prompt, and paste the pairing code returned by your agent."></a></td>
-    <td valign="top"><a href="docs/screenshots/02-start-agent.png"><img src="docs/screenshots/02-start-agent.png" width="280" alt="After pairing, open a new agent session and copy the message: Use browser-work MCP to list my open tabs."></a></td>
-    <td valign="top"><a href="docs/screenshots/03-connected.png"><img src="docs/screenshots/03-connected.png" width="280" alt="The extension reports Connected after the coding agent attaches to the work profile."></a></td>
+    <td valign="top"><a href="docs/screenshots/01-pair-profile-v0.5.2.png"><img src="docs/screenshots/01-pair-profile-v0.5.2.png" width="280" alt="Extension setup: name the profile work, copy the setup prompt, and paste the pairing code returned by your agent."></a></td>
+    <td valign="top"><a href="docs/screenshots/02-start-agent-v0.5.2.png"><img src="docs/screenshots/02-start-agent-v0.5.2.png" width="280" alt="After pairing, open a new agent session and copy the message: Use browser-work MCP to list my open tabs."></a></td>
+    <td valign="top"><a href="docs/screenshots/03-connected-v0.5.2.png"><img src="docs/screenshots/03-connected-v0.5.2.png" width="280" alt="The extension reports Connected after the coding agent attaches to the work profile."></a></td>
   </tr>
 </table>
 
-Setup previews render the extension's actual panel with sample states for a profile named `work`. They contain no live account data or pairing codes. Click an image to enlarge it.
+Setup previews render the extension's actual panel with the monkey logo and sample states for a profile named `work`. They contain no live account data or pairing codes. Click an image to enlarge it.
 
 The profile is registered once in the coding agent's user-level MCP configuration and works across its projects. There are no project-scope or provider-configuration dropdowns in the extension.
 
