@@ -7,7 +7,7 @@ import { WebSocket } from "ws";
 import { Server } from "@modelcontextprotocol/server";
 import { StdioServerTransport } from "@modelcontextprotocol/server/stdio";
 import { BRIDGE_FILE, STATE, PROTOCOL_VERSIONS, SLUG, getPort, readProfile } from "./settings.js";
-import { VERSION } from "./extension/protocol.js";
+import { VERSION, COMMAND_PROTOCOL } from "./extension/protocol.js";
 import { SecureMcpTransport } from "./secure-transport.js";
 
 // Stdout belongs exclusively to MCP. Background bridge output goes to its log file.
@@ -46,7 +46,14 @@ async function ensureBridge(port) {
     if (!response.ok || info?.app !== "profile-browser-mcp" || info.stateDirectory !== STATE) {
       throw new Error(`Port ${port} belongs to another app, an older bridge, or another checkout. Stop the previous bridge once, or generate a pairing with a different BROWSER_MCP_PORT.`);
     }
-    if (info.version !== VERSION) throw new Error("An older Browser Profile MCP bridge is running. Stop its agent connections, let it exit, then reconnect to load the update.");
+    // These artwork-only releases have identical bridge runtimes. A second
+    // agent can reuse their authenticated connection without interrupting the
+    // first. Keep exceptions tied to this launcher release: a future update
+    // must review compatibility rather than silently accepting older runtimes.
+    const compatibleArtworkRelease = VERSION === "0.5.3" && ["0.5.1", "0.5.2"].includes(info.version);
+    if (info.protocol !== COMMAND_PROTOCOL || (info.version !== VERSION && !compatibleArtworkRelease)) {
+      throw new Error("An incompatible Browser Profile MCP bridge is running. Stop its agent connections, let it exit, then reconnect to load the update.");
+    }
     return true;
   }
   if (await running()) return;

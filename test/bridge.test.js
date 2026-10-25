@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { randomBytes, randomUUID } from 'node:crypto';
-import { stat } from 'node:fs/promises';
+import { stat, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { WebSocket } from 'ws';
 import { SecurePeer } from '../extension/secure-channel.js';
@@ -89,6 +89,41 @@ test('binding conflicts are authenticated, and resetting a pairing moves it off 
   toolData(await currentAgent.callTool({ name: 'tabs', arguments: {} }));
   await until(() => moved.latest()?.verifiedAgentCount === 1);
   assert.equal(moved.latest().agentCount, 1);
+});
+
+test('launchers share compatible artwork releases and reject unknown versions or protocols', { timeout: 30000 }, async (t) => {
+  for (const [version, protocol, accepted] of [
+    ['0.5.1', 3, true], ['0.5.2', 3, true],
+    ['0.5.0', 3, false], ['0.6.0', 3, false], ['0.5.1', 2, false], ['0.5.3', 2, false],
+  ]) {
+    await t.test(`bridge ${version}, protocol ${protocol}`, async (t) => {
+      const f = await fixture(t);
+      await f.profile('work', ['--port', String(f.port)]);
+      const path = join(f.root, 'bridge.js');
+      const source = await readFile(path, 'utf8');
+      // Only advertise legacy health metadata. The real authenticated MCP
+      // transport is unchanged between these historical artwork releases.
+      const changed = source.replace(
+        'app: "profile-browser-mcp", version: VERSION,\n      protocol: COMMAND_PROTOCOL, stateDirectory: STATE',
+        `app: "profile-browser-mcp", version: "${version}",\n      protocol: ${protocol}, stateDirectory: STATE`,
+      );
+      assert.notEqual(changed, source);
+      await writeFile(path, changed);
+      const bridge = await f.startBridge();
+      if (accepted) {
+        const first = await f.client();
+        const second = await f.client();
+        assert.equal((await first.listTools()).tools.length, 8);
+        assert.equal((await second.listTools()).tools.length, 8);
+        await second.close();
+        assert.equal((await first.listTools()).tools.length, 8);
+        assert.equal((await f.health()).version, version);
+        assert.equal(bridge.exitCode, null);
+      } else {
+        await assert.rejects(f.client(), /incompatible Browser Profile MCP bridge/);
+      }
+    });
+  }
 });
 
 test('the launcher starts its own isolated bridge, which exits after the last session closes', { timeout: 80000 }, async (t) => {
